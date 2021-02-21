@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+ 
+
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <AspNetCoreHostingModel>OutOfProcess</AspNetCoreHostingModel>
+    <AspNetCoreModuleName>AspNetCoreModule</AspNetCoreModuleName>
+    <AssemblyName>DBCorp.ControleAcesso.Core</AssemblyName>
+    <RootNamespace>DBCorp.ControleAcesso.Core</RootNamespace>
+
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20190527115641_Inicial.cs" />
+    <Compile Remove="Migrations\20190527205900_cacoreca.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.2.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Infrastructure\Services.Core\Services.Core.csproj" />
+    <ProjectReference Include="..\ControleAcesso.Domain\ControleAcesso.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

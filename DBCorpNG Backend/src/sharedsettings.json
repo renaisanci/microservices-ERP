@@ -1,0 +1,14 @@
+{
+ // "ConnectionString": "Data Source=192.168.0.9\\dbc2,1435;Initial Catalog=DBCorpNG;Persist Security Info=True;User ID=user_DBCorpNG;Password=SXU8x1j4L4GpIRad7A6WRNA76",
+
+  "ConnectionString": "Data Source=cloud.dbcorp.com.br\\dbc2,1435;Initial Catalog=DBCorpNG;Persist Security Info=True;User ID=user_DBCorpNG;Password=SXU8x1j4L4GpIRad7A6WRNA76",
+
+ 
+  1435: null,
+  "1435;": null,
+  "Audience": {
+    "Secret": "Y2F0Y2hlciUyMHdvbmclMjBsb3ZlJTIwLm5ldA==",
+    "Iss": "http://dbcorp.com.br/",
+    "Aud": "DBCorp"
+  }
+}

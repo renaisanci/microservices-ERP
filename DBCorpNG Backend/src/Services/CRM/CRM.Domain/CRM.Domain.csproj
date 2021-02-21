@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>DBCorp.CRM.Domain</AssemblyName>
+    <RootNamespace>DBCorp.CRM.Domain</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Infrastructure\Domain.Core\Domain.Core.csproj" />
+  </ItemGroup>
+
+</Project>

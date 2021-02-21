@@ -1,0 +1,355 @@
+{
+  "ReRoutes": [
+    {
+      //API Infraestrutura///////////////////////////////////////////////////////////////////////////////////////////////////
+      "DownstreamPathTemplate": "/api/infraestrutura/api/values",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "ng.dbcorp.com.br",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/Infraestrutura/Values",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/infraestrutura/api/pessoa",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "ng.dbcorp.com.br",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/pessoa",
+      "UpstreamHttpMethod": [ "Get" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "IdentityApiKey",
+        "AllowedScopes": []
+      }
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/infraestrutura/api/pessoafisica/{nome}/{sobrenome}/{cpf}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "ng.dbcorp.com.br",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/pessoafisica/{nome}/{sobrenome}/{cpf}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "IdentityApiKey",
+        "AllowedScopes": []
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/infraestrutura/api/pessoafisica",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "ng.dbcorp.com.br",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/pessoafisica",
+      "UpstreamHttpMethod": [ "POST" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "IdentityApiKey",
+        "AllowedScopes": []
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/infraestrutura/api/pessoafisica/{Id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "ng.dbcorp.com.br",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/pessoafisica/{Id}",
+      "UpstreamHttpMethod": [ "PUT" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "IdentityApiKey",
+        "AllowedScopes": []
+      }
+    },
+
+
+    {
+      "DownstreamPathTemplate": "/api/infraestrutura/api/pessoafisica/{Id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "ng.dbcorp.com.br",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/pessoafisica/{Id}",
+      "UpstreamHttpMethod": [ "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "IdentityApiKey",
+        "AllowedScopes": []
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/infraestrutura/api/pessoajuridica/{nomeFantasia}/{cnpj}/{razaoSocial}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "ng.dbcorp.com.br",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/pessoajuridica/{nomeFantasia}/{cnpj}/{razaoSocial}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "IdentityApiKey",
+        "AllowedScopes": []
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/infraestrutura/api/pessoajuridica",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "ng.dbcorp.com.br",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/pessoajuridica",
+      "UpstreamHttpMethod": [ "POST" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "IdentityApiKey",
+        "AllowedScopes": []
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/infraestrutura/api/pessoajuridica/{Id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "ng.dbcorp.com.br",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/pessoajuridica/{Id}",
+      "UpstreamHttpMethod": [ "PUT" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "IdentityApiKey",
+        "AllowedScopes": []
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/infraestrutura/api/pessoajuridica/{Id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "ng.dbcorp.com.br",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/pessoajuridica/{Id}",
+      "UpstreamHttpMethod": [ "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "IdentityApiKey",
+        "AllowedScopes": []
+      }
+    },
+
+    //API CRM///////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+    {
+
+      "DownstreamPathTemplate": "/api/crm/api/funil",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "ng.dbcorp.com.br",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/funil",
+      "UpstreamHttpMethod": [ "Get" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "IdentityApiKey",
+        "AllowedScopes": []
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/crm/api/funil",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "ng.dbcorp.com.br",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/funil",
+      "UpstreamHttpMethod": [ "POST" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "IdentityApiKey",
+        "AllowedScopes": []
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/crm/api/funil/{Id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "ng.dbcorp.com.br",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/funil/{Id}",
+      "UpstreamHttpMethod": [ "PUT" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "IdentityApiKey",
+        "AllowedScopes": []
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/crm/api/funil/{Id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "ng.dbcorp.com.br",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/funil/{Id}",
+      "UpstreamHttpMethod": [ "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "IdentityApiKey",
+        "AllowedScopes": []
+      }
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/crm/api/funilEtapa/{Id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "ng.dbcorp.com.br",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/funilEtapa/{Id}",
+      "UpstreamHttpMethod": [ "PUT" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "IdentityApiKey",
+        "AllowedScopes": []
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/crm/api/funilEtapa/{Id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "ng.dbcorp.com.br",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/funilEtapa/{Id}",
+      "UpstreamHttpMethod": [ "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "IdentityApiKey",
+        "AllowedScopes": []
+      }
+    },
+
+    {
+
+      "DownstreamPathTemplate": "/api/crm/api/Cliente",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "ng.dbcorp.com.br",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/Cliente",
+      "UpstreamHttpMethod": [ "Get" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "IdentityApiKey",
+        "AllowedScopes": []
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/crm/api/Cliente/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "ng.dbcorp.com.br",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/Cliente/{id}",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      //API Controle de acesso//////////////////////////////////////////////////////////////////////////////////
+      "DownstreamPathTemplate": "/api/ca/api/auth/authenticate",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "ng.dbcorp.com.br",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/auth/authenticate",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/ca/api/Menu",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "ng.dbcorp.com.br",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/Menu",
+      "UpstreamHttpMethod": [ "Get" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "IdentityApiKey",
+        "AllowedScopes": []
+      }
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/ca/api/auth/register",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "ng.dbcorp.com.br",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/auth/register",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/ca/api/auth",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "ng.dbcorp.com.br",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/auth",
+      "UpstreamHttpMethod": [ "Get" ]
+    }
+  ],
+  "GlobalConfiguration": {
+    "RequestIdKey": "OcRequestId",
+    "AdministrationPath": "/administration"
+  }
+}

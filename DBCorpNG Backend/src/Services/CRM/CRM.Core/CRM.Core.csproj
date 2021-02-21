@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <AssemblyName>DBCorp.CRM.Core</AssemblyName>
+    <RootNamespace>DBCorp.CRM.Core</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20190523225023_634546546354.cs" />
+    <Compile Remove="Migrations\20190523232116_7678764.cs" />
+    <Compile Remove="Migrations\20190523232232_46545464654oioi.cs" />
+    <Compile Remove="Migrations\20190523232409_54545555454.cs" />
+    <Compile Remove="Migrations\20190523234420_23052019204.cs" />
+    <Compile Remove="Migrations\20190523234633_23052019204.cs" />
+    <Compile Remove="Migrations\20190523235200_230520192051.cs" />
+    <Compile Remove="Migrations\20190523235733_230520192057CRM.cs" />
+    <Compile Remove="Migrations\20190524000826_444444444444444.cs" />
+    <Compile Remove="Migrations\20190527115655_Inicial.cs" />
+    <Compile Remove="Migrations\20190527213016_crm_inicial.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.2.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="EntityFramework\Migrations\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Infrastructure\Services.Core\Services.Core.csproj" />
+    <ProjectReference Include="..\CRM.Domain\CRM.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
