@@ -1,0 +1,228 @@
+/*
+Template Name: Material Pro Admin
+Author: Themedesigner
+Email: niravjoshi87@gmail.com
+File: scss
+*/
+/**
+ * Table Of Content
+ *
+ * 	1. Globals
+ *	2. Headers
+ *	3. Navigations
+ *	4. Banners
+ *	5. Footers
+ *	6. app
+ *	7. Widgets
+ *	8. Custom Templates
+ */
+
+@import 'variable';
+
+
+@import 'icons/themify-icons/themify-icons.css';
+@import 'icons/font-awesome/css/font-awesome.css';
+@import 'spinner';
+@import 'app';
+@import 'header';
+@import 'widgets';
+@import 'pages';
+@import 'sidebar';
+@import 'dark-sidebar';
+@import 'responsive';
+@import 'rtl';
+
+
+// DBCorp Theme
+
+.dbcorp {
+	@import 'colors/dbcorp';
+  	@include angular-material-theme($dbcorp-app-theme);
+}
+
+// Red Theme
+
+.danger {
+	@import 'colors/red';
+	@include angular-material-theme($red-app-theme);
+}
+
+// Blue Theme
+
+.blue {
+	@import 'colors/blue';
+  	@include angular-material-theme($blue-app-theme);
+}
+
+// Green Theme
+
+.green {
+	@import 'colors/green';
+  	@include angular-material-theme($green-app-theme);
+}
+
+// Dark Theme
+
+.dark {
+	@import 'colors/dark';
+  	@include angular-material-theme($dark-theme);
+}
+
+
+ $custom-typography: mat-typography-config(
+
+);
+@include mat-core($custom-typography);
+
+// ajusta do topo do grid padrão devextreme
+.dx-datagrid-header-panel {
+  .dx-toolbar{
+  padding: 10px 10px 0 10px;
+  }
+}
+*:focus {
+  outline: 0 !important;
+}
+
+html .page-wrapper .page-content {
+  padding: 65px 8px;
+
+}
+
+ul.custom-bread-crumb{
+
+  margin-bottom:2px !important;
+}
+.custom-bread-crumb {
+
+  background-color: transparent !important;
+
+  padding: 0px 0px !important;
+  .ng-star-inserted{
+    font-size: 12px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color:black;
+    padding-left: 2px;
+
+
+    li{
+      font-size: 12px !important;
+
+    }
+    ul{
+
+      margin-bottom:2px !important;
+    }
+  }
+
+
+}
+/*******************
+customização modal
+*******************/
+
+.mat-dialog-container {
+  padding: 0px !important;
+  }
+
+
+  .mat-card .mat-card-content {
+
+    padding: 5px !important;
+  }
+
+
+
+  .flag-icon.flag-icon-squared {
+
+    margin-left: 10px;
+}
+
+
+/*******************
+customização tamnho do input
+*******************/
+.mat-form-field-appearance-outline .mat-form-field-wrapper {
+   margin: 0;
+}
+
+.mat-form-field-wrapper {
+   padding-bottom: 0;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-infix {
+  padding: 10px 0 10px 0;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-flex {
+  padding: 0 .75em 0 .75em;
+  margin-top: 0;
+
+  position: relative;
+}
+
+
+.button-foot{
+background-color: #f5f5f5; text-align: right;
+ padding: 5px;
+border: 1px solid #ddd;
+
+margin-top: 5px;
+}
+
+*:focus {
+  outline: none;
+ }
+
+.align-right-button{
+  text-align: right;
+  margin-bottom:5px;
+
+
+  }
+
+
+
+
+/*******************
+customização do topo do grid para ocultar botoes e mudar para cima do grid
+isso foi necessario pq quando é traduzido, o jquery do lis.component nao funciona
+*******************/
+
+// .dx-datagrid-search-panel{
+//   visibility: hidden;
+// }
+//  .dx-datagrid-export-button{
+//   visibility: hidden;
+//  }
+//  .dx-datagrid-column-chooser-button{
+//   visibility: hidden;
+//  }
+
+
+
+.dx-command-select{
+  pointer-events: none;
+}
+.example-h2 {
+  margin: 10px;
+}
+
+.example-section {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 60px;
+}
+
+.example-margin {
+  margin: 0 10px;
+}
+
+
+
+
+  .mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label, .mat-form-field-empty.mat-form-field-label {
+  display: block !important;
+  font-weight: bold !important;
+}

@@ -1,0 +1,20 @@
+<div  style="background-color: #f5f5f5; padding: 5px 10px 5px 10px; border: 1px solid #ddd">
+    <div fxLayout="row"  cdkDrag cdkDragRootElement=".cdk-overlay-pane" cdkDragHandle   >
+      <div  fxFill fxFlex="nogrow" style="text-align: left;padding-top: 10px;">
+          <ng-content select="form-title" ></ng-content>
+      </div>
+      <div fxFill fxFlex="nogrow" style="text-align: right">
+          <button mat-icon-button mat-dialog-close>  <mat-icon>close</mat-icon></button>
+      </div>
+    </div>
+</div>
+<div style="padding: 0px">
+    <ng-content select="form-content"></ng-content>
+</div>
+
+<div class="button-foot">
+  <div  class="align-right-button"  id="contentButtonformGenerics">
+    <ng-content select="form-right-buttons" ></ng-content>
+  </div>
+</div>
+

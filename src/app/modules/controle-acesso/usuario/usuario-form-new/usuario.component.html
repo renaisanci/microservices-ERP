@@ -1,0 +1,35 @@
+<div fxLayout="row wrap">
+    <div fxFlex.gt-sm="100" fxFlex="100">
+      <mat-card>
+        <mat-card-content>
+          <mat-card-title>Cadastro de Usuário</mat-card-title>
+          <!-- ============================================================== -->
+          <!-- column -->
+          <!-- ============================================================== -->
+
+          <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <mat-form-field appearance="outline">
+                  <mat-label>Primeiro Nome</mat-label>
+                  <input matInput autocomplete="off" placeholder="Usuário"   [formControl]="registerForm.controls['PrimeiroNome']">
+              </mat-form-field>
+              <small *ngIf="registerForm.controls['PrimeiroNome'].hasError('required') && registerForm.controls['PrimeiroNome'].touched" class="text-danger support-text">Primeiro Nome obrigatório.</small>
+            </div>
+            <div class="form-group">
+                <button [disabled]="loading" class="btn btn-success">Salvar</button>
+                <img *ngIf="loading" class="pl-3" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+
+                {{'      '}}
+                <a routerLink="/controleacesso/usuario" class="btn btn-secondary">Cancelar</a>
+                {{'      '}}
+                <button type="button" class="btn btn-primary">Novo</button>
+
+
+                {{'                                                                   '}}
+                <button type="button" class="btn btn-warning">Voltar</button>
+            </div>
+        </form>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>

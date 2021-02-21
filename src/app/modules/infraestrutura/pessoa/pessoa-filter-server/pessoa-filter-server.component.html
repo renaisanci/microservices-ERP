@@ -1,0 +1,27 @@
+
+
+<dbcorp-form>
+  <form-title>
+      <i class="fa fa-filter fa-lg"></i>&nbsp;{{'Filtros' | translate}}
+  </form-title>
+  <form-content>
+      <mat-tab-group #tabGroupFilterPessoa >
+          <mat-tab id="tabPfFilter" label="{{'Pessoa Física' | translate }}" >
+            <ng-template matTabContent  >
+                <dbcorp-pessoa-fisica  (formPf)="recebeForm($event)" ></dbcorp-pessoa-fisica>
+            </ng-template>
+        </mat-tab>
+        <mat-tab id="tabPjFilter" label= "{{'Pessoa Jurídica' | translate }}"  >
+            <ng-template matTabContent>
+                <dbcorp-pessoa-juridica (formPj)="recebeForm($event)"></dbcorp-pessoa-juridica>
+            </ng-template>
+        </mat-tab>
+        </mat-tab-group>
+  </form-content>
+
+  <form-right-buttons>
+  <dbcorp-search-button (click)="pesquisar()" [loading]="loading"  ></dbcorp-search-button>
+  </form-right-buttons>
+</dbcorp-form>
+
+

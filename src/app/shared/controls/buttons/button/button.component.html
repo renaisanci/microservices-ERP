@@ -1,0 +1,6 @@
+<button type="{{typeButton}}" mat-raised-button   class="{{colorButton}}" style="margin-left: 2px; margin-right: 2px; text-align: right;"
+[disabled]="disable"
+>
+  <i class="{{icon}}"></i>&nbsp;{{caption}}
+  <i  *ngIf="loading"  class="fa fa-spinner fa-spin" style="font-size:24px"></i>
+</button>

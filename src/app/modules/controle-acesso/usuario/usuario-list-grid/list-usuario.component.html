@@ -1,0 +1,37 @@
+
+<div fxLayout="row wrap">
+    <div fxFlex.gt-sm="100" fxFlex.gt-xs="100" fxFlex="100">
+                    <dx-data-grid id="gridContainer"
+                    [dataSource]="dataSource"
+                    [remoteOperations]="false"
+                    [allowColumnReordering]="true"
+                    [rowAlternationEnabled]="true"
+                    [columnHidingEnabled]="true"
+                    [showBorders]="true">
+                    <dxo-export [enabled]="true" fileName="Employees" ></dxo-export>
+                    <dxo-paging [pageSize]="10"></dxo-paging>
+                    <dxo-pager
+                        [showPageSizeSelector]="true"
+                        [allowedPageSizes]="[5, 8, 20, 50]"
+                    ></dxo-pager>
+                    <dxo-search-panel
+                        [visible]="true"
+                        [highlightCaseSensitive]="true"
+                    ></dxo-search-panel>
+                    <dxo-group-panel
+                        [visible]="true"
+                    ></dxo-group-panel>
+                    <dxo-grouping
+                        [autoExpandAll]="false"
+                    ></dxo-grouping>
+                    <dxi-column dataField="Username" dataType="string"></dxi-column>
+                    <dxi-column dataField="PrimeiroNome" dataType="string"></dxi-column>
+                    <dxi-column dataField="UltimoNome" dataType="string"></dxi-column>
+                </dx-data-grid>
+                </div>
+
+</div>
+
+
+
+

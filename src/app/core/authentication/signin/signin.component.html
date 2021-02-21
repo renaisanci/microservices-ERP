@@ -1,0 +1,61 @@
+
+<div class="login-register" style="background-image:url(assets/images/background/login.jpg);">
+  <div class="login-register-box" >
+      <mat-card >
+          <mat-card-content >
+              <form [formGroup]="loginForm" style="padding: 20px;" (ngSubmit)="onSubmit()">
+                  <div class="text-center">
+                      <img alt="homepage" src="assets/images/logo-dbcorp-130x50.png">
+                      <h4 class="m-t-0">Next Generation</h4>
+                  </div>
+
+                  <div fxLayout="row wrap">
+                      <!-- col full-->
+                      <div fxFlex.gt-sm="100" fxFlex.gt-xs="100" fxFlex="100" class="p-b-10"  >
+                          <mat-form-field appearance="outline">
+                              <mat-label>Email</mat-label>
+                              <input matInput autocomplete="off" placeholder="Email" [formControl]="loginForm.controls['username']">
+                          </mat-form-field>
+                          <small style="margin-top: 0; " *ngIf="loginForm.controls['username'].hasError('required') && loginForm.controls['username'].touched" class="text-danger support-text">Email obrigatório.</small>
+                      </div>
+                      <!-- col full-->
+                      <div fxFlex.gt-sm="100" fxFlex.gt-xs="100" fxFlex="100">
+                          <mat-form-field appearance="outline">
+                              <mat-label>Senha</mat-label>
+                              <input matInput  autocomplete="off" type="password" placeholder="Senha" [formControl]="loginForm.controls['password']">
+                            </mat-form-field>
+                          <small style="margin-top: 0;" *ngIf="loginForm.controls['password'].hasError('required') && loginForm.controls['password'].touched" class="text-danger support-text">Senha obrigatório.</small>
+                      </div>
+                      <!-- col half-->
+                      <div fxFlex.gt-sm="50" fxFlex.gt-xs="50">
+                          <mat-checkbox color="warn">Lembre me</mat-checkbox>
+                      </div>
+                      <!-- col half-->
+                      <div fxFlex.gt-sm="50" fxFlex.gt-xs="50" class="text-right" style="flex: 1 1 0%; box-sizing: border-box;">
+                          <a [routerLink]="['/authentication/forgot']" class="link">Esqueci a senha?</a>
+                      </div>
+                      <!-- col full-->
+
+
+                      <div fxFlex.gt-sm="100" fxFlex.gt-xs="100" fxFlex="100">
+                          <button mat-raised-button color="accent" class="btn-block btn-lg m-t-20 m-b-20" type="submit" [disabled]="!loginForm.valid">
+
+
+                       <mat-icon *ngIf="loading">lock_open</mat-icon> <span *ngIf="loading">AGUARDE....</span>
+                       <mat-icon *ngIf="!loading">lock</mat-icon> <span *ngIf="!loading"> ENTRAR</span>
+
+
+                          </button>
+                      </div>
+                      <!-- col full-->
+                      <div fxFlex.gt-sm="100" fxFlex.gt-xs="100" fxFlex="100" class="text-center">
+                          <span>Não tem uma conta?
+                              <a [routerLink]="['/authentication/register']" class="text-info link">Registrar</a>
+                          </span>
+                      </div>
+                  </div>
+              </form>
+          </mat-card-content>
+      </mat-card>
+  </div>
+</div>

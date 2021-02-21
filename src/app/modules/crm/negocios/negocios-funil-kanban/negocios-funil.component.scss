@@ -1,0 +1,216 @@
+@import '../../../../../assets/styles/variable';
+/*******************
+Timeline page
+******************/
+
+
+
+.taskboard {
+  overflow-x: auto;
+  overflow-y: auto;
+  white-space: nowrap;
+  height: calc(100vh - 0px);
+  background-color: #fff;
+  .taskboard-wrapper {
+    width: 280px;
+    padding-right: 8px;
+    padding-left: 8px;
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+    height: 100%;
+    &:first-child {
+      padding-left: 0;
+    }
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+  .taskboard-list {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    max-height: 100%;
+    white-space: normal;
+    background-color: whitesmoke;
+    border-radius: 0;
+  }
+
+  .taskboard-list-topo {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    max-height: 100%;
+    white-space: normal;
+    background-color: #7460ee;
+    border-radius: 0;
+  }
+  .taskboard-header {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-transform: uppercase;
+    // letter-spacing: 0.02rem;
+    padding: 8px 0px 0;
+  }
+  .taskboard-cards {
+    overflow-x: hidden;
+    overflow-y: auto;
+
+  }
+  .taskboard-task {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+background: #fff;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &:hover {
+      cursor: grab;
+    }
+  }
+  .taskboard-task:after {
+    content: '';
+    position: absolute;
+
+    top: 0;
+    border-left: 15px solid transparent;
+    border-top: 15px solid transparent;
+    right: 0px;
+  }
+  .taskboard-task.task-status-success:after {
+    border-top-color: $success;
+  }
+  .taskboard-task.task-status-info:after {
+    border-top-color: $info;
+  }
+  .taskboard-task.task-status-warning:after {
+    border-top-color: $warning;
+  }
+  .taskboard-task.task-status-danger:after {
+    border-top-color: $danger;
+  }
+
+
+
+  .task-decription {
+    color: rgba(0, 0, 0, 0.5);
+  }
+  .todos {
+    .taskboard-task {
+      background: $light-info;
+    }
+  }
+  .inprogress {
+    .taskboard-task {
+      background: $light-warning;
+    }
+  }
+  .completed {
+    .taskboard-task {
+      background: $light-success;
+    }
+  }
+  .onhold {
+    .taskboard-task {
+      background: $light-danger;
+    }
+  }
+  .taskboard-cards {
+    padding: 8px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  .taskboard-task-title {
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: 500;
+  }
+}
+
+.ps {
+  background-color: whitesmoke;
+}
+
+
+
+.example-container {
+  width: 325px;
+  max-width: 100%;
+
+  display: inline-block;
+  vertical-align: top;
+}
+
+.example-list {
+  // border: solid 1px #ccc;
+  min-height: 60px;
+  background: rgb(255, 255, 255);
+  border-radius: 4px;
+  overflow-x: hidden;
+  display: block;
+  height: calc(100vh - 150px);
+
+}
+
+.example-box {
+  padding: 20px 10px;
+  border-bottom: solid 1px #ccc;
+  color: rgba(0, 0, 0, 0.87);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  cursor: move;
+  background: white;
+  font-size: 14px;
+}
+
+
+
+.cdk-drag-preview {
+  box-sizing: border-box;
+  border-radius: 4px;
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+              0 8px 10px 1px rgba(0, 0, 0, 0.14),
+              0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.cdk-drag-placeholder {
+  opacity: 0;
+}
+
+.cdk-drag-animating {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.example-box:last-child {
+  border: none;
+}
+
+.example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.example-card {
+  max-width: 400px;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+
+.mat-icon-38{
+  height:38px !important;
+  width:38px !important;
+  font-size:38px !important;
+}

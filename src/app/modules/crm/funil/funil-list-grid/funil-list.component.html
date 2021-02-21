@@ -1,0 +1,35 @@
+<div fxLayout="row wrap">
+  <div fxFlex.gt-sm="100" fxFlex.gt-xs="100" fxFlex="100">
+    <dx-data-grid id="gridContainer" #gridPessoas [dataSource]="ds" [columns]="columns" [remoteOperations]="false"
+      [allowColumnReordering]="true" [rowAlternationEnabled]="true" [allowColumnResizing]="true"
+      [columnHidingEnabled]="true" [showBorders]="true" [columnAutoWidth]="true" [columnResizingMode]="true"
+      noDataText="{{'Nenhum registro encontrado' | translate}}" (onCellPrepared)="setStyle($event)"
+      (onCellClick)="cellClickHandler($event)">
+      <dxo-editing mode="batch" [allowAdding]="false" [allowUpdating]="false">
+        <dxo-form [colCount]="1"></dxo-form>
+      </dxo-editing>
+      <dxo-state-storing [enabled]="true" type="custom" [customLoad]="loadState" [customSave]="saveState">
+      </dxo-state-storing>
+      <dxo-column-chooser [enabled]="true" title="{{'Escolher a coluna' | translate}}" mode="select">
+      </dxo-column-chooser>
+      <dxo-column-fixing [enabled]="true"></dxo-column-fixing>
+      <dxo-selection mode="multiple" showCheckBoxesMode="always"></dxo-selection>
+      <dxo-export [enabled]="true" fileName="pessoa"></dxo-export>
+      <dxo-paging [pageSize]="10"></dxo-paging>
+      <dxo-pager [showPageSizeSelector]="true" [allowedPageSizes]="[10, 20, 30, 50]"></dxo-pager>
+      <dxo-search-panel *ngIf="localeIdioma=='pt'" [visible]="true" [highlightCaseSensitive]="true"
+        placeholder="Pesquisar..."></dxo-search-panel>
+      <dxo-search-panel *ngIf="localeIdioma=='en'" [visible]="true" [highlightCaseSensitive]="true"
+        placeholder="Search..."></dxo-search-panel>
+      <dxo-group-panel *ngIf="localeIdioma=='pt'" [visible]="true"
+        emptyPanelText="Arraste a coluna no topo do grid para agrupar"></dxo-group-panel>
+      <dxo-group-panel *ngIf="localeIdioma=='en'" [visible]="true"
+        emptyPanelText="Drag a column header here to group by that column"></dxo-group-panel>
+      <dxo-group-panel *ngIf="localeIdioma=='es'" [visible]="true"
+        emptyPanelText="Arrastre un encabezado de columna aquí para agrupar por esa columna"></dxo-group-panel>
+      <dxo-grouping [autoExpandAll]="false"></dxo-grouping>
+
+    </dx-data-grid>
+  </div>
+</div>
+

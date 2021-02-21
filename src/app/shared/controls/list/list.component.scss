@@ -1,0 +1,30 @@
+.no-shadow mat-toolbar {
+  box-shadow: none;
+}
+.fill-remaining-space {
+  // This fills the remaining space, by using flexbox.
+  // Every toolbar row uses a flexbox row layout.
+  flex: 1 1 auto;
+}
+.example-icon {
+  padding: 0 14px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.mat-icon-button {
+
+width: 22px;
+}
+
+@media (max-width: 500px) {
+  #inputPesquisaPadrao{
+    position: absolute;
+  }
+
+}
+
+
+

@@ -1,0 +1,44 @@
+<dbcorp-list (invokExcluirItens)="excluirItens()" (invokRefreshData)="refreshData()" customTitle="Negócios"
+  [modalFilter]="modalNegociosFilterServer" [modalFormNovo]="modalFormNovoNegocios">
+  <list-grid>
+    <dbcorp-negocios-funil   [perfectScrollbar]="config"   ></dbcorp-negocios-funil>
+  </list-grid>
+
+  <botoes-extra>
+    <button   mat-button href="#"  style="width: 25px;" matTooltip="{{
+        'Clique aqui para .' | translate
+      }}" matTooltipPosition="right" mat-icon-button>
+
+      <i class="fa fa-columns fa-lg"></i>
+    </button>
+    <button mat-button href="#" style="width: 25px;" matTooltip="{{
+      'Clique aqui para .' | translate
+    }}" matTooltipPosition="right" mat-icon-button>
+        <i class="fa fa-bars fa-lg"></i>
+
+      </button>
+
+    <button mat-button href="#"  style="width: 25px;"  matTooltip="{{
+        'Clique aqui para .' | translate
+      }}" matTooltipPosition="right" mat-icon-button>
+      <i class="fa fa-calendar fa-lg"></i>
+    </button>
+
+
+
+
+
+  </botoes-extra>
+
+
+  <list-filter>
+    <ng-template #modalNegociosFilterServer>
+
+    </ng-template>
+  </list-filter>
+  <list-form>
+    <ng-template #modalFormNovoNegocios>
+      <dbcorp-negocios-add></dbcorp-negocios-add>
+    </ng-template>
+  </list-form>
+</dbcorp-list>

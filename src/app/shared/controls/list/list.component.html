@@ -1,0 +1,129 @@
+<h4 style="padding-left: 3px;"translate>
+  {{ customTitle }}
+</h4>
+<!-- ============================================================== -->
+<!-- Top do GRID com os princiáis comandos -->
+<!-- ============================================================== -->
+<mat-toolbar>
+  <button
+    mat-button
+    href="#"
+    matTooltip="{{
+      'Clique aqui para aplicar um filtro nos dados do servidor.' | translate
+    }}"
+    matTooltipPosition="right"
+    mat-icon-button
+    (click)="openModalFilter(modalFilter)"
+  >
+    <i class="fa fa-filter fa-lg"></i>
+  </button>
+  |
+  <button
+    mat-button
+    href="#"
+    matTooltip="{{
+      'Clique aqui para excluir os registros selecionados.' | translate
+    }}"
+    matTooltipPosition="right"
+    mat-icon-button
+    (click)="deleteItems()"
+  >
+    <i class="fa fa-trash fa-lg"></i>
+  </button>
+
+
+
+
+    <ng-content select="botoes-extra"></ng-content>
+    <!-- ============================================================== -->
+    <!-- BOTÃO extra no topo -->
+    <!-- ============================================================== -->
+
+
+
+  <span fxFlex></span>
+  <span class="fill-remaining-space"></span>
+  <div id="inputPesquisaPadrao" class="float-right"></div>
+  <button
+    mat-icon-button
+    matTooltip="Clique aqui para fazer uma pesquisa rápida nos dados já carregados no grid."
+    matTooltipPosition="right"
+    (click)="showInputSearchGrid()"
+  >
+    <mat-icon>search</mat-icon>
+  </button>
+  <button
+    matTooltip="Clique aqui para Expadir/Colapsar o agrupamento de colunas no grid."
+    matTooltipPosition="right"
+    mat-icon-button
+    (click)="showHideHeaderGroupGrid()"
+  >
+    <i class="fa fa-compress" aria-hidden="true"></i>
+  </button>
+
+  <button
+    mat-icon-button
+    matTooltip="Clique aqui para Atualizar os dados do grid."
+    matTooltipPosition="right"
+    (click)="refreshData()"
+  >
+    <mat-icon>refresh</mat-icon>
+  </button>
+
+  <button
+    mat-icon-button
+    matTooltip="Mais opções..."
+    matTooltipPosition="right"
+    [matMenuTriggerFor]="menu4"
+  >
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu4="matMenu">
+    <button mat-menu-item (click)="exportExcel()">
+      <i class="fa fa-file-excel-o fa-lg" aria-hidden="true"></i>
+      <span> Exportar para o Excel </span>
+    </button>
+
+    <button mat-menu-item (click)="columnChooser()">
+      <i class="fa fa-columns fa-lg" aria-hidden="true"></i>
+
+      <span> {{ "Exibir/Esconder Colunas" | translate }} </span>
+    </button>
+    <button mat-menu-item (click)="restaurarPadrao()">
+      <i class="fa fa-undo fa-lg" aria-hidden="true"></i>
+
+      <span> {{ "Restaurar Padrão" | translate }} </span>
+    </button>
+  </mat-menu>
+</mat-toolbar>
+<!-- ============================================================== -->
+<!-- GRID PADRÂO -->
+<!-- ============================================================== -->
+<div>
+  <ng-content select="list-grid"></ng-content>
+  <!-- ============================================================== -->
+  <!-- BOTÃO P CHAMAR O FORMULARIO DE NOVO CADASTRO -->
+  <!-- ============================================================== -->
+</div>
+<div
+  style="z-index:5; position: fixed; display: flex; align-self: flex-end; bottom: 0%; margin-bottom: -5px; margin-right: -15px; right:0"
+>
+  <button
+    mat-fab
+    color="primary"
+    class="bottom-right"
+    (click)="openModalFormNovo(modalFormNovo)"
+    matTooltip="Clique aqui para Adicionar um novo registro."
+    matTooltipPosition="right"
+  >
+    <mat-icon>add</mat-icon>
+  </button>
+</div>
+<!-- ============================================================== -->
+<!-- MODAL DE FILTROS PARA PESQUISAR NO SERVER-->
+<!-- ============================================================== -->
+<ng-content select="list-filter"></ng-content>
+<!-- ============================================================== -->
+<!-- MODAL FORMULARIO DE NOVO CADASTRO -->
+<!-- ============================================================== -->
+<ng-content select="list-form"></ng-content>

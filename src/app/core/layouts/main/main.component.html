@@ -1,0 +1,148 @@
+<!-- ============================================================== -->
+<!-- Main wrapper - style you can find in pages.scss -->
+<!-- ============================================================== -->
+<div class="main-container" [dir]="dir"
+  [ngClass]="{'minisidebar': minisidebar, 'boxed': boxed, 'danger': danger, 'blue': blue, 'green': green, 'dark': dark, 'dbcorp': dbcorp }">
+  <!-- ============================================================== -->
+  <!-- End Topbar - style you can find in pages.scss -->
+  <!-- ============================================================== -->
+  <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 0 : 0"
+    [ngClass]="{'minisidebar': minisidebar}">
+    <!-- ============================================================== -->
+    <!-- Sidebar - style you can find in sidebar.scss -->
+    <!-- ============================================================== -->
+    <mat-sidenav #snav id="snav" class="pl-xs" mode="over" fixedTopGap="0" [perfectScrollbar]="config"
+      [opened]="mobileQuery.matches" (open)="sidebarOpened = true" (close)="sidebarOpened = false">
+
+      <dbcorp-sidebar class="app-sidebar" [sidNav]="snav"></dbcorp-sidebar>
+    </mat-sidenav>
+
+
+
+
+
+
+    <!-- ============================================================== -->
+    <!-- Sidebar - style you can find in sidebar.scss -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Right Sidebar - style you can find in rightsidebar.component.scss -->
+    <!-- ============================================================== -->
+    <mat-sidenav #end position="end" class="chat-panel" mode="over" opened="false">
+      <div class="scroll">
+        <mat-nav-list>
+          <h3 mat-subheader class="text-uppercase font-weight-bold">Tema</h3>
+          <mat-list-item>
+            <mat-checkbox color="warn" [(ngModel)]="dark" (change)="green = blue = danger = false">Escuro</mat-checkbox>
+          </mat-list-item>
+
+          <mat-divider></mat-divider>
+          <h3 mat-subheader class="text-uppercase font-weight-bold">Idiomas</h3>
+
+          <mat-list-item>
+            <mat-checkbox color="warn" [(ngModel)]="lanEs" (change)="languageEs()" class="text-danger">
+              <flag-icon country="es" squared></flag-icon>
+            </mat-checkbox>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-checkbox color="warn" [(ngModel)]="lanBr" (change)="languageBr()" class="text-megna">
+              <flag-icon country="br" squared></flag-icon>
+            </mat-checkbox>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-checkbox color="warn" [(ngModel)]="lanUs" (change)="languageUs()" class="text-info">
+              <flag-icon country="us" squared></flag-icon>
+            </mat-checkbox>
+          </mat-list-item>
+
+          <!-- <p>ngDate: {{today | date:'shortDate'}}</p>
+                  <p>localDate: {{today | localDate}}</p>
+                  <p>ngNumber: {{val | number}}</p>
+                  <p>localNumber: {{val | localNumber}}</p> -->
+
+
+        </mat-nav-list>
+      </div>
+    </mat-sidenav>
+
+    <!-- ============================================================== -->
+    <!-- Page container - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <mat-sidenav-content class="page-wrapper">
+
+      <!-- ============================================================== -->
+      <!-- Topbar - style you can find in header.scss -->
+      <!-- ============================================================== -->
+      <mat-toolbar color="primary" class="topbar telative">
+        <!-- ============================================================== -->
+        <!-- Logo - style you can find in header.scss -->
+        <!-- ============================================================== -->
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">
+            <!-- Logo icon -->
+            <div fxShow fxHide.gt-xs>
+              <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+              <!-- Dark Logo icon -->
+              <img src="assets/images/logo-icon.png" alt="homepage" class="dark-logo">
+              <!-- Light Logo icon -->
+              <img src="assets/images/logo-light-icon.png" alt="homepage" class="light-logo">
+            </div>
+            <!--End Logo icon -->
+            <!-- Logo text -->
+            <span fxHide fxShow.gt-xs>
+              <!-- dark Logo text -->
+              <img src="assets/images/logo-dbcorp-130x50-fundo-branco.png" alt="homepage" class="dark-logo">
+              <!-- Light Logo text -->
+              <img src="assets/images/logo-dbcorp-130x50-fundo-branco.png" class="light-logo" alt="homepage">
+            </span>
+          </a>
+        </div>
+        <!-- ============================================================== -->
+        <!-- sidebar toggle -->
+        <!-- ============================================================== -->
+
+        <button mat-icon-button (click)="snav.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <!-- ============================================================== -->
+        <!-- Search - style you can find in header.scss -->
+        <!-- ============================================================== -->
+        <!-- <button mat-icon-button class="srh-btn">
+          <mat-icon>search</mat-icon>
+      </button>
+      <form class="app-search">
+          <input type="text" class="form-control" placeholder="Pesquisar & Enter">
+          <a class="cl-srh-btn">
+              <i class="ti-close"></i>
+          </a>
+      </form> -->
+        <span fxFlex></span>
+        <!-- ============================================================== -->
+        <!-- Right sidebar toggle - style you can find in rightsidebar.component.scss -->
+        <!-- ============================================================== -->
+        <button (click)="end.toggle()" mat-icon-button class="ml-xs overflow-visible">
+          <mat-icon>settings</mat-icon>
+        </button>
+        <!-- ============================================================== -->
+        <!-- app header component - style you can find in header.scss / header.component.ts-->
+        <!-- ============================================================== -->
+        <dbcorp-header></dbcorp-header>
+      </mat-toolbar>
+      <mat-sidenav-content class="page-content"  [perfectScrollbar]="config">
+        <app-ng-dynamic-breadcrumb></app-ng-dynamic-breadcrumb>
+        <router-outlet>
+          <dbcorp-spinner></dbcorp-spinner>
+        </router-outlet>
+
+      </mat-sidenav-content>
+      <footer *ngIf="currentUser" class="footer"> <span style="padding-left: 5px;"> © {{dateFooter}} DBCorp</span>
+      </footer>
+    </mat-sidenav-content>
+    <!-- ============================================================== -->
+    <!-- Page container - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+  </mat-sidenav-container>
+
+
+
+</div>

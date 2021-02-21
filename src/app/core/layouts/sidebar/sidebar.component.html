@@ -1,0 +1,102 @@
+<!-- ============================================================== -->
+<!-- sidebar -->
+<!-- ============================================================== -->
+
+<div  >
+  <div
+    class="user-profile"
+    style="padding-top: 15px;
+           padding-bottom: 10px;
+           text-align:center;
+           background-color: #bebebe63;
+           --background: url(assets/images/background/user-info.jpg) no-repeat;"
+  >
+    <!-- User profile image -->
+    <!-- <div class="profile-img">
+      <img src="assets/images/logo-dbcorp-130x50.png" alt="user" />
+    </div> -->
+    <img src="assets/images/logo-dbcorp-130x50.png" alt="user" />
+    <!-- User profile text-->
+    <!-- ============================================================== -->
+    <!-- Profile - style you can find in header.scss -->
+    <!-- ============================================================== -->
+    <!-- <div class="profile-text">
+      <a [matMenuTriggerFor]="sdprofile" class="">
+        Markarn Doe
+        <i class="ti-angle-down font-12 m-l-5"></i>
+      </a>
+    </div>
+    <mat-menu #sdprofile="matMenu" class="mymegamenu">
+      <button mat-menu-item><mat-icon>settings</mat-icon> Settings</button>
+      <button mat-menu-item><mat-icon>account_box</mat-icon> Profile</button>
+      <button mat-menu-item>
+        <mat-icon>notifications_off</mat-icon> Disable notifications
+      </button>
+      <button mat-menu-item><mat-icon>exit_to_app</mat-icon> Sign Out</button>
+    </mat-menu> -->
+
+  </div>
+<div>
+    <mat-form-field style="padding-left: 10px;padding-right: 10px;" >
+        <input matInput  placeholder="Filtrar" [(ngModel)]="filtro" >
+    </mat-form-field>
+  <mat-nav-list appAccordion   *ngIf="menus$ | async as menus; else loading" style="margin-left: 5px;">
+    <mat-list-item appAccordionLink    *ngFor="let menuNivel1  of menus | filterBy: filtro " routerLinkActive="selected" group="{{menuNivel1.State}}">
+        <a class="" appAccordionToggle [routerLink]="['/', menuNivel1.State]" *ngIf="menuNivel1.Type === 'link'">
+            <mat-icon>{{ menuNivel1.Icon }}</mat-icon>
+            <span>{{ menuNivel1.DescMenu }}</span>
+            <span fxFlex></span>
+
+        </a>
+
+        <a class="" appAccordionToggle href="{{menuNivel1.State}}" *ngIf="menuNivel1.Type === 'extLink'">
+            <mat-icon>{{ menuNivel1.Icon }}</mat-icon>
+            <span>{{ menuNivel1.DescMenu }}</span>
+            <span fxFlex></span>
+
+        </a>
+        <a class="" appAccordionToggle href="{{menuNivel1.State}}" target="_blank" *ngIf="menuNivel1.Type === 'extTabLink'">
+            <mat-icon>{{ menuNivel1.Icon }}</mat-icon>
+            <span>{{ menuNivel1.DescMenu}}</span>
+            <span fxFlex></span>
+        </a>
+        <a class="" appAccordionToggle href="javascript:;" *ngIf="menuNivel1.Type == 'root'">
+            <mat-icon>{{ menuNivel1.Icon }}</mat-icon>
+            <span>{{ menuNivel1.DescMenu }}</span>
+            <span fxFlex></span>
+            <mat-icon class="dd-icon">keyboard_arrow_down</mat-icon>
+        </a>
+        <mat-nav-list class="sub-item"  >
+            <mat-list-item *ngFor="let menuNivel2  of menus " routerLinkActive="selected" >
+                <a [routerLink]="['/', menuNivel1.State, menuNivel2.State ]" *ngIf="menuNivel2.Type === 'link'" class="relative"
+                    routerLinkActive="selected">{{ menuNivel2.DescMenu}}</a>
+            </mat-list-item>
+
+            <mat-list-item *ngFor="let menuNivel2 of menuNivel1.Children; let j=index"   >
+
+                <a class=""  id="{{j}}{{ menuNivel2.Id }}" href="javascript: void(0);" *ngIf="menuNivel2.Type === 'subchild'" (click)="clickEvent(j,menuNivel2.Id );">
+                    <span>{{ menuNivel2.DescMenu }} </span>
+                    <span fxFlex></span>
+                    <mat-icon class="dd-icon">keyboard_arrow_down</mat-icon>
+                </a>
+
+                <mat-nav-list class="child-sub-item" *ngIf="menuNivel2.Type === 'subchild'">
+                    <mat-list-item *ngFor="let menuNivel3 of menuNivel2.Children" routerLinkActive="selected">
+                        <a [routerLink]="['/', menuNivel2.State, menuNivel3.State ]" routerLinkActive="selected"  (click)="clickEventTela();"   >{{menuNivel3.DescMenu}}</a>
+                    </mat-list-item>
+                </mat-nav-list>
+            </mat-list-item>
+        </mat-nav-list>
+    </mat-list-item>
+</mat-nav-list>
+
+</div>
+
+<ng-template #loading>
+    <div class="spinner">
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+
+      </div>
+      <span style="padding-left: 10px;">Carregando Menu...</span>
+</ng-template>

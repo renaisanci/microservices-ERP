@@ -1,0 +1,34 @@
+/*
+Template Name: Material Pro Admin
+Author: Themedesigner
+Email: niravjoshi87@gmail.com
+File: scss
+*/
+
+@import '~@angular/material/theming';
+
+/*Material Theme Colors*/
+
+$dbcorp-app-primary: mat-palette($mat-blue);
+$dbcorp-app-accent: mat-palette($mat-indigo, A200, A100, A400);
+$dbcorp-app-warn: mat-palette($mat-pink);
+// Create the theme object (a Sass map containing all of the palettes).
+$dbcorp-app-theme: mat-light-theme($dbcorp-app-primary, $dbcorp-app-accent, $dbcorp-app-warn);
+$themecolor:#0070c0;
+$themecolor-alt: #0070c0;
+$white:#fff;
+#snav {
+    .mat-nav-list .mat-list-item {
+        .mat-list-item-content {
+            &:hover {
+                > a {
+                    color: $themecolor;
+                }
+            }
+        }
+        &.selected > .mat-list-item-content > a {
+            background: $themecolor-alt;
+            color: $white;
+        }
+    }
+}

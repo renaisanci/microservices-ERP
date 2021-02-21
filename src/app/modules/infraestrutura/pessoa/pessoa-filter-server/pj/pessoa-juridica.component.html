@@ -1,0 +1,27 @@
+<form [formGroup]="form">
+    <div fxLayout="row wrap">
+    <div  class="p2e-2" fxFlex.gt-sm="50" fxFlex.gt-xs="50" fxFlex="100">
+        <mat-form-field appearance="outline">
+            <mat-label>CNPJ</mat-label>
+        <input matInput placeholder="CNPJ" mask="00000000000000"   maxlength="14" [formControl]="form.controls['Cnpj']" >
+      </mat-form-field>
+      <mat-hint *ngIf="form.controls['Cnpj'].hasError('number') && form.controls['Cnpj'].touched" class="text-danger font-14">Somente números.</mat-hint>
+      <mat-hint *ngIf="form.controls['Cnpj'].hasError('cnpjNotValid') && form.controls['Cnpj'].touched" class="text-danger font-14">CNPJ Inválido.</mat-hint>
+    </div>
+
+    <div  class="p2e-2" fxFlex.gt-sm="50" fxFlex.gt-xs="50" fxFlex="100">
+        <mat-form-field appearance="outline">
+            <mat-label>Nome Fantasia</mat-label>
+        <input matInput placeholder="Nome Fantasia"  [formControl]="form.controls['NomeFantasia']">
+      </mat-form-field>
+    </div>
+    <div  class="p2e-2" fxFlex.gt-sm="100" fxFlex.gt-xs="100" fxFlex="100" >
+        <mat-form-field appearance="outline">
+            <mat-label>Razão Social</mat-label>
+        <input matInput placeholder="Razão Social"  [formControl]="form.controls['RazaoSocial']" >
+      </mat-form-field>
+    </div>
+
+
+</div>
+</form>

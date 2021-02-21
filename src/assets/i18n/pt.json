@@ -1,0 +1,14 @@
+{
+  "Pessoa": "Pessoa",
+  "Infraestrutura": "Infraestrutura",
+  "Pessoa Física": "Pessoa Física",
+  "Pessoa Jurídica":"Pessoa Jurídica",
+  "Filtros":"Filtros",
+  "Clique para Filtrar dados":"Clique para Filtrar dados",
+  "Infraestrutura / Pessoa":"Infrastructure / People",
+  "No data" : "Nenhum registro encontrado",
+  "Drag a column header here to group by that column" :"Arraste a coluna no topo do grid para agrupar",
+  "Columns" :"Colunas",
+  "Search...":"Pesquisar...",
+  "Deal":"Negócios"
+}

@@ -1,0 +1,33 @@
+<form [formGroup]="form">
+  <div fxLayout="row wrap">
+    <div class="p2e-2" fxFlex.gt-sm="50" fxFlex.gt-xs="50" fxFlex="100">
+      <mat-form-field appearance="outline">
+        <mat-label>CPF</mat-label>
+        <input matInput placeholder="CPF" maxlength="12"  mask="000000000000" [formControl]="form.controls['Cpf']" />
+      </mat-form-field>
+      <mat-hint *ngIf="form.controls['Cpf'].hasError('number') &&  form.controls['Cpf'].touched"
+        class="text-danger font-14">Somente números.</mat-hint>
+
+
+
+    </div>
+    <div class="p2e-2" fxFlex.gt-sm="50" fxFlex.gt-xs="50" fxFlex="100">
+      <mat-form-field appearance="outline">
+        <mat-label>Nome</mat-label>
+        <input matInput placeholder="Nome" [formControl]="form.controls['Nome']" />
+      </mat-form-field>
+      <mat-hint *ngIf="
+          form.controls['Nome'].hasError('minlength') &&
+          form.controls['Nome'].touched
+        " class="text-danger font-14">Nome deve ter mais que 3 digitos.</mat-hint>
+    </div>
+    <div class="p2e-2" fxFlex.gt-sm="100" fxFlex.gt-xs="100" fxFlex="100">
+      <mat-form-field appearance="outline">
+        <mat-label>Sobrenome</mat-label>
+        <input matInput placeholder="Sobrenome" [formControl]="form.controls['Sobrenome']" />
+      </mat-form-field>
+    </div>
+  </div>
+
+
+</form>

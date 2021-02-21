@@ -1,0 +1,24 @@
+<dbcorp-form (dataUpdateForm)="recebeDadosUpdate($event)">
+  &nbsp;
+  <form-title> <i class="fa fa-user"></i>&nbsp;{{customTitleMomalFormNovo}} </form-title>
+  <form-content>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+              <div class="p2e-2" fxFlex.gt-sm="100" fxFlex.gt-xs="100" fxFlex="100">
+                <mat-form-field appearance="outline">
+                    <mat-label>Nome</mat-label>
+                    <input matInput placeholder="nome" maxlength="12"   [formControl]="form.controls['Funil']"  >
+                  </mat-form-field>
+
+
+          </div>
+          <mat-hint *ngIf="form.controls['Funil'].hasError('required') && form.controls['Funil'].touched"
+          class="text-danger font-14">Obrigatório.</mat-hint>
+
+
+        </form>
+  </form-content>
+  <form-right-buttons>
+      <dbcorp-save-button ></dbcorp-save-button>
+  </form-right-buttons>
+</dbcorp-form>

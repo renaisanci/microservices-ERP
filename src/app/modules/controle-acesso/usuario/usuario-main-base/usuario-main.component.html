@@ -1,0 +1,19 @@
+<dbcorp-form-base customTitle="Usuário" [modalFilter]="modalUsuariofilterServer"   [modalFormNovo]="modalFormNovoUsuario"  >
+  <app-list-grid>
+    <app-list-usuario></app-list-usuario>
+  </app-list-grid>
+  <app-list-filter>
+      <ng-template #modalUsuariofilterServer>
+      <app-usuario-filter-server></app-usuario-filter-server>
+      </ng-template>
+  </app-list-filter>
+  <app-list-add>
+    <ng-template #modalFormNovoUsuario>
+    <app-usuario></app-usuario>
+  </ng-template>
+  </app-list-add>
+</dbcorp-form-base>
+
+
+
+

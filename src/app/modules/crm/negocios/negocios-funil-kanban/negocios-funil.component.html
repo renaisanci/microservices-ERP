@@ -1,0 +1,181 @@
+<div class="taskboard page-height">
+  <!-- <div class="example-container">
+    <mat-card>
+      <mat-card-header class="bg-info text-white">
+        <mat-card-title>
+          <div class="taskboard-header text-uppercase">
+            <strong>TO DO</strong>
+            <mat-icon class="mat-icon-38">arrow_right_alt</mat-icon>
+          </div>
+        </mat-card-title>
+        <mat-card-subtitle></mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+
+        <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="todo" [cdkDropListConnectedTo]="[doneList]"
+          class="example-list" (cdkDropListDropped)="drop($event)">
+
+
+          <div class="card" style="margin:10px" *ngFor="let item of todo" cdkDrag>
+            <div class="taskboard-list">
+              <div class="taskboard-cards">
+                <div class="taskboard-task">
+                  <div class="taskboard-task-title">{{item}}</div>
+                  <span class="task-decription"> </span>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="example-container">
+    <mat-card>
+      <mat-card-header class="bg-info text-white">
+        <mat-card-title>
+          <div class="taskboard-header text-uppercase">
+            <strong>DONE</strong>
+
+            <mat-icon class="mat-icon-38">arrow_right_alt</mat-icon>
+          </div>
+        </mat-card-title>
+        <mat-card-subtitle></mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <div cdkDropList #doneList="cdkDropList" [cdkDropListData]="done" [cdkDropListConnectedTo]="[todoList]"
+          class="example-list" (cdkDropListDropped)="drop($event)">
+
+
+          <div class="card" style="margin:10px" *ngFor="let item of done" cdkDrag>
+            <div class="taskboard-list">
+              <div class="taskboard-cards">
+                <div class="taskboard-task">
+                  <div class="taskboard-task-title">{{item}}</div>
+                  <span class="task-decription"> </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+-->
+
+
+
+  <div cdkDropListGroup>
+
+
+    <div class="example-container" *ngFor="let etapa of funilEtapa">
+      <mat-card>
+        <mat-card-header class="bg-info text-white">
+          <mat-card-title>
+            <div class="taskboard-header text-uppercase">
+              <strong>{{etapa.NomeFunilEtapa}}</strong>
+
+              <mat-icon class="mat-icon-38">arrow_right_alt</mat-icon>
+            </div>
+          </mat-card-title>
+          <mat-card-subtitle></mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+
+
+          <div cdkDropList  [id]="etapa.FunilEtapaId" [cdkDropListData]="etapa.Negocios"
+           class="example-list" (cdkDropListDropped)="drop($event)"
+            [perfectScrollbar]="config">
+            <!-- <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item}}</div> -->
+            <div class="card" style="margin:10px" *ngFor="let negocio of etapa.Negocios" cdkDrag>
+              <div class="taskboard-list">
+
+                <div class="taskboard-cards">
+
+                  <div class="taskboard-task">
+
+                    <div class="taskboard-task-title">{{negocio.Titulo}}</div>
+                    <span class="task-decription">{{negocio.Organizacao}}</span>
+
+                  </div>
+
+                </div>
+
+
+                <!-- <div class="card-body">
+                <h4 class="card-title">{{task.title}}</h4>
+                <p class="card-text" style="width:100px">{{task.description}}</p>
+                <a href="#" class="btn btn-primary">See Detail</a>
+              </div> -->
+
+              </div>
+            </div>
+
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+  </div>
+
+
+
+  <!-- <div class="example-container">
+      <mat-card>
+        <mat-card-header class="bg-info text-white">
+          <mat-card-title>DONE</mat-card-title>
+          <mat-card-subtitle>This is the subtitle</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+
+
+
+          <div cdkDropList #doneList="cdkDropList" [cdkDropListData]="done" [cdkDropListConnectedTo]="[todoList]"
+            class="example-list" (cdkDropListDropped)="drop($event)"  [perfectScrollbar]="config">
+            <!-- <div class="example-box" *ngFor="let item of done" cdkDrag>{{item}}</div>
+
+
+            <div class="card" style="margin:10px" *ngFor="let item of done" cdkDrag>
+
+              <div class="card-body">
+                <h4 class="card-title">John Doe</h4>
+                <p class="card-text">Some example text.</p>
+                <a href="#" class="btn btn-primary">See Profile</a>
+              </div>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div> -->
+
+
+</div>
+
+
+
+
+
+<!--
+      <div class="taskboard page-height"   >
+        <div class="taskboard-wrapper" style="margin: 10px;" *ngFor="let board of taskboard">
+          <div class="taskboard-list" [ngClass]="board.class">
+            <div class="taskboard-header text-uppercase">
+              <strong>{{board.title}}</strong>
+            </div>
+
+            <div class="taskboard-cards" >
+
+              <div class="taskboard-task"  *ngFor="let task of board.tasks" >
+
+                <div class="taskboard-task-title">{{task.title}}</div>
+                <span class="task-decription">{{task.description}}</span>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div> -->

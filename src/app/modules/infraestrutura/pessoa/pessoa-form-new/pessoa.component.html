@@ -1,0 +1,112 @@
+<dbcorp-new-form (dataUpdateForm)="recebeDadosUpdate($event)">
+  &nbsp;
+  <form-title> <i class="fa fa-user"></i>&nbsp;{{customTitleMomalFormNovo}} </form-title>
+  <form-content>
+    <mat-tab-group #tabGroupPessoa>
+      <mat-tab id="tabP" label="{{ 'Geral' | translate }}">
+        <ng-template matTabContent>
+          <section class="example-section">
+            <label class="example-margin">Tipo Pessoa</label>
+            <mat-radio-group
+              [(ngModel)]="componentPessoa"
+              [(disabled)]="disabledCompPessoa"
+            >
+              <mat-radio-button class="example-margin" value="rdbPf">
+                Física</mat-radio-button
+              >
+              <mat-radio-button class="example-margin" value="rdbPj">
+                Jurídica</mat-radio-button
+              >
+            </mat-radio-group>
+          </section>
+          <dbcorp-pessoa-fisica-add
+            [dadosUpdatePf]="dadosUpdatePessoa"
+            *ngIf="componentPessoa === 'rdbPf'"
+          >
+          </dbcorp-pessoa-fisica-add>
+          <dbcorp-pessoa-juridica-add
+            [dadosUpdatePj]="dadosUpdatePessoa"
+            *ngIf="componentPessoa === 'rdbPj'"
+          >
+          </dbcorp-pessoa-juridica-add>
+        </ng-template>
+      </mat-tab>
+
+      <!-- <mat-tab id="tabPf" label="{{'Pessoa Física' | translate}}">
+        <ng-template matTabContent>
+          <dbcorp-pessoa-fisica-add  [dadosUpdatePf]='dadosUpdatePessoa'  ></dbcorp-pessoa-fisica-add>
+        </ng-template>
+      </mat-tab>
+      <mat-tab id="tabPj" label="{{'Pessoa Jurídica' | translate }}">
+        <ng-template matTabContent>
+          <dbcorp-pessoa-juridica-add [dadosUpdatePj]='dadosUpdatePessoa'  ></dbcorp-pessoa-juridica-add>
+        </ng-template>
+      </mat-tab> -->
+
+      <!-- <mat-tab id="tabEndereco" label="Endereço" >
+                <ng-template matTabContent>
+
+                    Loaded: {{getTimeLoaded(2) | date:'medium'}}
+                  </ng-template>
+            </mat-tab>
+            <mat-tab id="tabUsuario" label="Usuário">
+                <ng-template matTabContent>
+
+                    Loaded: {{getTimeLoaded(3) | date:'medium'}}
+                  </ng-template>
+            </mat-tab>
+            <mat-tab id="tabCliente" label="Cliente">
+                <ng-template matTabContent>
+
+                    Loaded: {{getTimeLoaded(4) | date:'medium'}}
+                  </ng-template>
+            </mat-tab>
+            <mat-tab id="tabFornecedor" label="Fornecedor">
+                <ng-template matTabContent>
+
+                    Loaded: {{getTimeLoaded(5) | date:'medium'}}
+                  </ng-template>
+            </mat-tab>
+            <mat-tab id="tabFiscal" label="Fiscal">
+                <ng-template matTabContent>
+
+                    Loaded: {{getTimeLoaded(6) | date:'medium'}}
+                  </ng-template>
+            </mat-tab>
+            <mat-tab id="tabComercial" label="Comercial">
+                <ng-template matTabContent>
+
+                    Loaded: {{getTimeLoaded(7) | date:'medium'}}
+                  </ng-template>
+            </mat-tab>
+            <mat-tab id="tabRepresentante" label="Representante">
+                <ng-template matTabContent>
+
+                    Loaded: {{getTimeLoaded(8) | date:'medium'}}
+                  </ng-template>
+            </mat-tab>
+            <mat-tab id="tabContato" label="Contato">
+                <ng-template matTabContent>
+
+                    Loaded: {{getTimeLoaded(9) | date:'medium'}}
+                  </ng-template>
+            </mat-tab>
+            <mat-tab id="tabProspect" label="Prospect">
+                <ng-template matTabContent>
+
+                    Loaded: {{getTimeLoaded(10) | date:'medium'}}
+                  </ng-template>
+            </mat-tab>
+            <mat-tab id="tabOutros" label="Outros">
+                <ng-template matTabContent>
+
+                    Loaded: {{getTimeLoaded(11) | date:'medium'}}
+                  </ng-template>
+            </mat-tab> -->
+    </mat-tab-group>
+  </form-content>
+
+
+
+
+</dbcorp-new-form>

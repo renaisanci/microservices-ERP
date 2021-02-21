@@ -1,0 +1,70 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div fxLayout="row wrap">
+    <div class="p2e-2" fxFlex.gt-sm="50" fxFlex.gt-xs="50" fxFlex="100">
+      <mat-form-field appearance="outline">
+        <mat-label>CPF</mat-label>
+        <input matInput placeholder="CPF" maxlength="12" [formControl]="form.controls['Cpf']">
+      </mat-form-field>
+      <mat-hint *ngIf="form.controls['Cpf'].hasError('number') && form.controls['Cpf'].touched"
+        class="text-danger font-14">Somente números.</mat-hint>
+      <mat-hint *ngIf="form.controls['Cpf'].hasError('pattern') && form.controls['Cpf'].touched"
+        class="text-danger font-14">CPF Inválido.</mat-hint>
+      <mat-hint *ngIf="form.controls['Cpf'].hasError('cpfNotValid') && form.controls['Cpf'].touched"
+        class="text-danger font-14">CPF Inválido.</mat-hint>
+    </div>
+
+    <div class="p2e-2" fxFlex.gt-sm="50" fxFlex.gt-xs="50" fxFlex="100">
+      <mat-form-field appearance="outline">
+        <mat-label >Nome</mat-label>
+        <input matInput placeholder="Nome" [formControl]="form.controls['Nome']">
+      </mat-form-field>
+      <mat-hint *ngIf="form.controls['Nome'].hasError('required') && form.controls['Nome'].touched"
+        class="text-danger font-14">Nome obrigatório.</mat-hint>
+      <mat-hint *ngIf="form.controls['Nome'].hasError('minLength') && form.controls['Nome'].touched"
+        class="text-danger font-14">Pelo menos 4 digitos.</mat-hint>
+    </div>
+    <div class="p2e-2" fxFlex.gt-sm="50" fxFlex.gt-xs="50" fxFlex="100">
+      <mat-form-field appearance="outline">
+        <mat-label>Sobrenome</mat-label>
+        <input matInput placeholder="Sobrenome" [formControl]="form.controls['Sobrenome']">
+      </mat-form-field>
+
+      <mat-hint *ngIf="form.controls['Sobrenome'].hasError('required') && form.controls['Sobrenome'].touched"
+        class="text-danger font-14">Sobrenome obrigatório.</mat-hint>
+
+
+    </div>
+
+    <div class="p2e-2" fxFlex.gt-sm="50" fxFlex.gt-xs="50" fxFlex="100">
+      <mat-form-field appearance="outline">
+        <mat-label>RG</mat-label>
+        <input matInput placeholder="RG" [formControl]="form.controls['Rg']">
+      </mat-form-field>
+    </div>
+
+    <div class="p2e-2" fxFlex.gt-sm="100" fxFlex.gt-xs="100" fxFlex="100">
+      <mat-form-field appearance="outline">
+        <input matInput [matDatepicker]="picker" placeholder="Data Nascimento"   [formControl]="form.controls['DtNascimento']"     #inputDtNascimento >
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+
+
+    </div>
+  </div>
+
+
+
+
+<div class="button-foot">
+    <div  class="align-right-button" fxFlex.gt-sm="50" fxFlex.gt-xs="50" fxFlex="100" >
+        <dbcorp-save-button [disable]="!form.valid" [loading]="loadingSalvar"  id="btnSalve"  ></dbcorp-save-button>
+        <dbcorp-delete-button *ngIf="form.controls['Id'].value" [loading]="loadingDelete"   (click)="deleteRegistro()" id="btnDelete" ></dbcorp-delete-button>
+        <dbcorp-cancel-button *ngIf="form.controls['Id'].value" [loading]="loadingCancel" (click)="cancelarOperacao()" id="btnCancel" ></dbcorp-cancel-button>
+    </div>
+  </div>
+
+
+</form>
+

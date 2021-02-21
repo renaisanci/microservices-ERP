@@ -1,0 +1,21 @@
+<dbcorp-list (invokExcluirItens)="excluirItens()" (invokRefreshData)="refreshData()" customTitle="Funil"
+  [modalFilter]="modalFunilFilterServer" [modalFormNovo]="modalFormNovoFunil">
+  <list-grid>
+    <dbcorp-funil-list (dadosFiltro)="recebeDadosFiltro($event)"></dbcorp-funil-list>
+  </list-grid>
+
+  <botoes-extra>
+
+  </botoes-extra>
+
+  <list-filter>
+    <ng-template #modalFunilFilterServer>
+      <dbcorp-funil-filter-server></dbcorp-funil-filter-server>
+    </ng-template>
+  </list-filter>
+  <list-form>
+    <ng-template #modalFormNovoFunil>
+      <dbcorp-funil></dbcorp-funil>
+    </ng-template>
+  </list-form>
+</dbcorp-list>

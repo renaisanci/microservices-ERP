@@ -1,0 +1,25 @@
+<dbcorp-list
+  (invokExcluirItens)="excluirItens()"
+  (invokRefreshData)="refreshData()"
+  customTitle="Pessoa"
+  [modalFilter]="modalPessoaFilterServer"
+  [modalFormNovo]="modalFormNovoPessoa"
+>
+  <list-grid>
+    <dbcorp-pessoa-list
+      (dadosFiltro)="recebeDadosFiltro($event)"
+
+
+    ></dbcorp-pessoa-list>
+  </list-grid>
+  <list-filter>
+    <ng-template #modalPessoaFilterServer>
+      <dbcorp-pessoa-filter-server></dbcorp-pessoa-filter-server>
+    </ng-template>
+  </list-filter>
+  <list-form>
+    <ng-template #modalFormNovoPessoa>
+      <dbcorp-pessoa></dbcorp-pessoa>
+    </ng-template>
+  </list-form>
+</dbcorp-list>
